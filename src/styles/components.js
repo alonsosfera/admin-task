@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { WEDGEWOOD } from 'styles/colors';
+import { Link } from "react-router-dom";
+import { MATISSE, PERIWINKLE_GRAY, WEDGEWOOD } from 'styles/colors';
 
 export const HeaderContainer = styled.header`
   display: flex;
   height: 4rem;
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
   width: 90%;
   border-radius: 10px;
   justify-content: space-between;
@@ -36,5 +37,61 @@ export const HeaderContainer = styled.header`
     li{
       list-style-type: none;
     }
+  }
+  
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    
+    h1{
+      font-size: 1.5rem;
+    }
+    
+    nav {
+      width: 11rem;
+      justify-content: space-between;
+      
+      a{
+        font-size: 0.9rem;
+      }
+    }
+  }
+`;
+
+export const CardsContainer = styled.div`
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  width: 60%;
+  height: 15rem;
+  
+  @media screen and (max-width: 768px) {
+    height: 40rem;
+    flex-direction: column;
+  }
+`;
+
+export const CardContainer = styled(Link)`
+  display: flex;
+  justify-content: center;
+  width: 13rem;
+  border: 2px solid ${MATISSE};
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  background: url(/images/${({ image }) => image}) top no-repeat;
+  background-size: contain;
+  
+  h2 {
+    align-self: flex-end;
+    color: ${PERIWINKLE_GRAY};
+  }
+  
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  @media screen and (max-width: 768px) {
+    height: 11rem;
+    background-size: 60%;
   }
 `;
