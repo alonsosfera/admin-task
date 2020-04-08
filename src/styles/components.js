@@ -4,7 +4,7 @@ import { WEDGEWOOD } from 'styles/colors';
 export const HeaderContainer = styled.header`
   display: flex;
   height: 4rem;
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
   width: 90%;
   border-radius: 10px;
   justify-content: space-between;
