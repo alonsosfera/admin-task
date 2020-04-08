@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { WEDGEWOOD } from 'styles/colors';
+import { Link } from "react-router-dom";
+import { MATISSE, PERIWINKLE_GRAY, WEDGEWOOD } from 'styles/colors';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -36,5 +37,34 @@ export const HeaderContainer = styled.header`
     li{
       list-style-type: none;
     }
+  }
+`;
+
+export const CardsContainer = styled.div`
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  width: 60%;
+  height: 15rem;
+`;
+
+export const CardContainer = styled(Link)`
+  display: flex;
+  justify-content: center;
+  width: 13rem;
+  border: 2px solid ${MATISSE};
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  background: url(/images/${({ image }) => image}) top no-repeat;
+  background-size: contain;
+  
+  h2 {
+    align-self: flex-end;
+    color: ${PERIWINKLE_GRAY};
+  }
+  
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;
