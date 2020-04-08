@@ -1,10 +1,13 @@
 import React from 'react';
+import { SectionContainer } from 'styles/containers';
 
 const Dashboard = () => {
   return (
-    <div>
-      <h1>This is a dashboard</h1>
-    </div>
+    <SectionContainer>
+      <article>
+        <h1>Welcome to the Admin Dashboard</h1>
+      </article>
+    </SectionContainer>
   );
 };
 
