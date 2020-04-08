@@ -38,6 +38,23 @@ export const HeaderContainer = styled.header`
       list-style-type: none;
     }
   }
+  
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    
+    h1{
+      font-size: 1.5rem;
+    }
+    
+    nav {
+      width: 11rem;
+      justify-content: space-between;
+      
+      a{
+        font-size: 0.9rem;
+      }
+    }
+  }
 `;
 
 export const CardsContainer = styled.div`
@@ -46,6 +63,11 @@ export const CardsContainer = styled.div`
   justify-content: space-evenly;
   width: 60%;
   height: 15rem;
+  
+  @media screen and (max-width: 768px) {
+    height: 40rem;
+    flex-direction: column;
+  }
 `;
 
 export const CardContainer = styled(Link)`
@@ -66,5 +88,10 @@ export const CardContainer = styled(Link)`
   
   &:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  @media screen and (max-width: 768px) {
+    height: 11rem;
+    background-size: 60%;
   }
 `;
