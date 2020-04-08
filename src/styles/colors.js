@@ -1,0 +1,1 @@
+export const WEDGEWOOD = '#547AA5';
