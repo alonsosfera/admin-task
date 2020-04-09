@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import { MATISSE, PERIWINKLE_GRAY, WEDGEWOOD } from 'styles/colors';
+import { MATISSE, PALE_AQUA, PERIWINKLE_GRAY, SUCCESS, WEDGEWOOD } from 'styles/colors';
 
 export const HeaderContainer = styled.header`
   display: flex;
@@ -93,5 +93,60 @@ export const CardContainer = styled(Link)`
   @media screen and (max-width: 768px) {
     height: 11rem;
     background-size: 60%;
+  }
+`;
+
+export const NewRowContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  height: ${({ show }) => show ? '3' : '0'}rem;
+  transition: 0.3s;
+  
+  div {
+    input {
+      border-radius: 3px;
+      font-size: 1.1rem;
+    }
+  }
+  
+  button {
+    font-size: 1rem;
+    height: 1.5rem;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    background-color: ${SUCCESS};
+  }
+`;
+
+export const TableContainer = styled.table`
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+  
+  th, td {
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+  }
+  
+  th {
+    height: 2rem;
+    background-color: #808D8E;
+  }
+  
+  td {
+    height: 1.5rem;
+    text-align: center;
+    
+    button {
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 3px;
+    }
+  }
+  
+  tr:nth-child(odd){
+    background-color: ${PALE_AQUA};
   }
 `;
