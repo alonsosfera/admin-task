@@ -7,8 +7,8 @@ const Header = () => (
     <h1><Link to="/">Jaxi Admin</Link></h1>
     <nav>
       <li><Link to="/">Home</Link></li>
-      <li><Link to="/tasks">Tareas</Link></li>
-      <li><Link to="/projects">Proyectos</Link></li>
+      <li><Link to="/tasks">Tasks</Link></li>
+      <li><Link to="/projects">Projects</Link></li>
     </nav>
   </HeaderContainer>
 );

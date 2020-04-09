@@ -14,7 +14,7 @@ const NewRow = ({ change, fields, item, show, submit }) => (
         />
       </div>
     ))}
-    <button onClick={() => submit()}>Guardar</button>
+    <button onClick={() => submit()}>Save</button>
   </NewRowContainer>
 );
 
