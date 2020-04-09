@@ -3,7 +3,6 @@ import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import Header from './header';
-import Tasks from "containers/tasks";
 
 configure({ adapter: new Adapter() });
 
