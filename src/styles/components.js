@@ -105,6 +105,7 @@ export const NewRowContainer = styled.div`
   transition: 0.3s;
   
   div {
+    display: ${({ show }) => show ? '0' : 'none'}
     input {
       border-radius: 3px;
       font-size: 1.1rem;
@@ -112,12 +113,25 @@ export const NewRowContainer = styled.div`
   }
   
   button {
+    display: ${({ show }) => show ? '0' : 'none'}
     font-size: 1rem;
     height: 1.5rem;
     border-radius: 3px;
     color: white;
     font-weight: bold;
     background-color: ${SUCCESS};
+  }
+  
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: ${({ show }) => show ? '10' : '0'}rem;
+    div {
+      display: ${({ show }) => show ? '0' : 'none'}
+    }
+    
+    button {
+      display: ${({ show }) => show ? '0' : 'none'}
+    }
   }
 `;
 
@@ -148,5 +162,13 @@ export const TableContainer = styled.table`
   
   tr:nth-child(odd){
     background-color: ${PALE_AQUA};
+  }
+  
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+    
+    td > button {
+      font-size: 0.7rem;
+    }
   }
 `;
