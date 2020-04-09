@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import { EntityContainer } from 'styles/containers';
 import Table from 'components/table';
 import NewRow from "components/newRow";
-import { HandleChangeHelper, HandleDeleteHelper, HandleSubmitHelper, ToggleShowHelper } from './helpers';
+import {
+  HandleChangeHelper,
+  HandleDeleteHelper,
+  HandleSubmitHelper,
+  ToggleShowHelper
+} from './helpers';
 
 const Tasks = () => {
   const [ dataState, setDataState ] = useState([
-    { id: 1, name: 'Primero', project: 'Proyecto 1', dev: 'Alonso Gutierrez' }
+    { id: 1, name: 'First', project: 'Admin', dev: 'Alonso Gutierrez' }
   ]);
   const [ countState, setCountState ] = useState(dataState.length ? dataState.length + 1 : 1);
   const [ newTask, setNewTask ] = useState({
@@ -41,17 +46,17 @@ const Tasks = () => {
   return (
     <EntityContainer>
       <article>
-        <h1>TAREAS</h1>
-        <button onClick={() => toggleShow()}>Nuevo</button>
+        <h1>TASKS</h1>
+        <button onClick={() => toggleShow()}>New</button>
         <NewRow
           change={(e) => handleChange(e)}
-          fields={{ name: 'Nombre', project: 'Proyecto', dev: 'Desarrollador' }}
+          fields={{ name: 'Name', project: 'Project', dev: 'Developer' }}
           item={newTask}
           submit={() => handleSubmit()}
           show={showNewState}
         />
         <Table
-          columns={['Nombre', 'Proyecto', 'Desarrollador']}
+          columns={['Name', 'Project', 'Developer']}
           data={
             dataState.map(task => (
               <tr key={task.id}>
@@ -59,8 +64,8 @@ const Tasks = () => {
                 <td>{task.project}</td>
                 <td>{task.dev}</td>
                 <td>
-                  <button onClick={() => handleEdit(task)}>Editar</button>
-                  <button onClick={() => handleDelete(task.id)}>Borrar</button>
+                  <button onClick={() => handleEdit(task)}>Edit</button>
+                  <button onClick={() => handleDelete(task.id)}>Delete</button>
                 </td>
               </tr>
             ))
